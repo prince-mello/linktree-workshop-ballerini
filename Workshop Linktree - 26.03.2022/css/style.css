@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+/* Configuração Global */
+:root {
+    --bg-main-color: #2f2723;
+    --light-yellow: #efc764;
+    --light-orange: #e68e7b;
+    --light-blue: #97d4d9;
+    --light-green: #b3dfd3;
+    --light-pink: #feafbe;
+
+    font-size: 16px;
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: center;
+    color: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow: hidden;
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    background-color: var(--bg-main-color);
+}
+
+/* Configuração balls background */
+.ball-1 {
+    aspect-ratio: 1;
+    height: 70%;
+    position: absolute;
+    background: linear-gradient(115deg, var(--light-yellow), var(--light-orange));
+    border-radius: 50%;
+    top: -18%;
+    left: 10%;
+    z-index: -1;
+}
+
+.ball-2 {
+    aspect-ratio: 1;
+    height: 40%;
+    position: absolute;
+    background: linear-gradient(115deg, var(--light-blue), var(--light-green));
+    border-radius: 50%;
+    bottom: 10%;
+    right: 20%;
+    z-index: -1;
+}
+
+/* Configuração da tela principal */
+.screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    min-height: 100vh;
+}
+
+/* Configuração do card header */
+.card {
+    width: 400px;
+    height: max-content; /* a altura aumenta de acordo com a quantidade do conteúdo */
+    padding: 44px 22px;
+    background-color: rgba(255, 255, 255, .1);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(20px);
+    box-shadow: 5px 0px 20px rgba(0, 0, 0, 0.25);
+}
+
+.card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.profile-photo {
+    width: 40%;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.person-name {
+    font-size: 1.8rem;
+    margin: 10px 0;
+}
+
+.person-description {
+    font-size: 1.2rem;
+}
+
+/* Configuração do card body */
+.data-content {
+    position: relative;
+    top: 0%;
+    transition: ease-out 0.2s;
+}
+
+.data-body {
+    display: flex;
+    height: 1.2em;
+    padding: 15px 0px;
+    justify-content: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: rgba(255, 255, 255, .1);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 35px;
+    clip-path: polygon(0% 100%, 0% 0%, 100% 0%, 100% 100%);
+    margin: 20px 0;
+}
+
+.data-body:hover .data-content {
+    top: calc(-100% - 1.2rem);
+    transition: ease-in 0.2s;
+}
+
+.data-body:hover path {
+    fill: var(--light-pink);
+    border: 1px solid var(--light-pink);
+    transition: ease-in 0.2s;
+}
+
+.data-body:hover {
+    color: var(--light-pink);
+    border: 1px solid var(--light-pink);
+    transition: ease-in 0.2s;
+}
+
+.name-icon {
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+}
+
+.svg-icon {
+    height: 1.2rem;
+}
+
+.svg-icon path {
+    fill: #fff;
+}
+
+@media only screen and (max-width: 600px) {
+    .ball-1 {
+        left: -90%;
+    }
+
+    .ball-2 {
+        right: -30%;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .ball-1 {
+        left: -90%;
+    }
+
+    .ball-2 {
+        right: -15%;
+    }
+}
